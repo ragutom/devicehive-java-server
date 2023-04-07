@@ -59,7 +59,7 @@ public class SessionMonitor {
         }
     }
 
-    @Scheduled(cron = "0/30 * * * * *")
+    @Scheduled(cron = "0 0/10 * * * *") /*PING INTERVAL CRON SPRING (sec,min,hour,day,month,day of week)*/
     public synchronized void ping() {
         try {
             for (WebSocketSession session : sessionMap.values()) {
